@@ -1,5 +1,4 @@
 import 'package:ekko/infrastructure/dal/services/data/albuns.data.dart';
-import 'package:ekko/infrastructure/dal/services/data/usuarios.data.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_albuns.response.g.dart';

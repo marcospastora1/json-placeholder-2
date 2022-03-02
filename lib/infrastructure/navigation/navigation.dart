@@ -1,9 +1,7 @@
 import 'package:ekko/infrastructure/navigation/bindings/controllers/albuns.controller.binding.dart';
 import 'package:ekko/infrastructure/navigation/bindings/controllers/fotos.controller.binding.dart';
 import 'package:ekko/infrastructure/navigation/bindings/controllers/posts.controller.binding.dart';
-import 'package:ekko/presentation/albuns/screens/albuns.screen.dart';
 import 'package:ekko/presentation/comments/screens/comments.screen.dart';
-import 'package:ekko/presentation/fotos/screens/fotos.screen.dart';
 import 'package:get/get.dart';
 
 import '../../presentation/screens.dart';

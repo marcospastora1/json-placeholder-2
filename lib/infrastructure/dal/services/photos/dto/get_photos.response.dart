@@ -1,4 +1,3 @@
-import 'package:ekko/infrastructure/dal/services/data/comentarios.data.dart';
 import 'package:ekko/infrastructure/dal/services/data/fotos.data.dart';
 import 'package:json_annotation/json_annotation.dart';
 

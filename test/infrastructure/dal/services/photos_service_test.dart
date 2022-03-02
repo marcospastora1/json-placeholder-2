@@ -1,35 +1,34 @@
 import 'package:ekko/domain/core/abstractions/infrastructure/http_connect.interface.dart';
-import 'package:ekko/domain/core/abstractions/infrastructure/services/posts_service.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/photos_service.interface.dart';
 import 'package:ekko/domain/core/exceptions/default.exception.dart';
-import 'package:ekko/infrastructure/dal/services/posts/dto/get_posts.response.dart';
-import 'package:ekko/infrastructure/dal/services/posts/posts.service.dart';
+import 'package:ekko/infrastructure/dal/services/photos/photos.service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../mocks.dart';
-import 'mocks/posts_mocks/posts.mocks.dart';
+import 'mocks/photos_mocks/photos.mocks.dart';
 
 void main() {
   late IHttpConnect connect;
-  late IPostsService postsService;
+  late IPhotosService photosService;
 
   setUpAll(() {
     connect = ConnectMock();
-    postsService = PostsService(connect);
+    photosService = PhotosService(connect);
   });
 
-  group('Posts', () {
+  group('Photos', () {
     test(
-      'Should return a list of posts',
+      'Should return a list of photos',
       () async {
         when(
-          () => connect.get<GetPostsResponse>(
-            'users/1/posts',
+          () => connect.get(
+            'albums/1/photos',
             decoder: any(named: 'decoder'),
           ),
         ).thenAnswer((_) async => successResponse);
 
-        final response = await postsService.getPosts(userId: 1);
+        final response = await photosService.getPhotos(albumId: 1);
 
         expect(response, successResponse.payload!.data);
       },
@@ -40,12 +39,12 @@ void main() {
       () async {
         when(
           () => connect.get(
-            'users/1/posts',
+            'albums/1/photos',
             decoder: any(named: 'decoder'),
           ),
         ).thenAnswer((_) async => defaultExceptionResponse);
 
-        final response = postsService.getPosts(userId: 1);
+        final response = photosService.getPhotos(albumId: 1);
 
         expect(response, throwsA(isA<DefaultException>()));
       },
