@@ -1,11 +1,13 @@
+import 'package:ekko/domain/core/abstractions/domain/repositories/usuarios_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/users_service.interface.dart';
 import 'package:ekko/domain/usuarios/models/usuarios.models.dart';
-import 'package:ekko/infrastructure/dal/services/usuarios/usuarios.service.dart';
 
-class UsuariosRepository {
-  final UsuariosService _usuariosService;
-  const UsuariosRepository({required UsuariosService usuariosService})
+class UsuariosRepository implements IUsuariosRepository {
+  final IUsuariosService _usuariosService;
+  const UsuariosRepository({required IUsuariosService usuariosService})
       : _usuariosService = usuariosService;
 
+  @override
   Future<List<UsuariosModels>> getUsers() async {
     try {
       final response = await _usuariosService.getUsuarios();

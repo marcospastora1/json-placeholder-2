@@ -23,11 +23,7 @@ class HomeScreen extends GetView<HomeController> {
               ),
             );
           } else {
-            return Obx(
-              () {
-                return ListViewWidgetUsers();
-              },
-            );
+            return ListUsersWidget();
           }
         },
       ),

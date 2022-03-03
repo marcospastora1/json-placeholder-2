@@ -3,7 +3,7 @@ import 'package:ekko/presentation/home/controllers/home.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ListViewWidgetUsers extends GetView<HomeController> {
+class ListUsersWidget extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

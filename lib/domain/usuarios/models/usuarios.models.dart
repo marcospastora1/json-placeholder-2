@@ -1,12 +1,13 @@
 import 'package:ekko/infrastructure/dal/services/data/endereco.data.dart';
 import 'package:ekko/infrastructure/dal/services/data/usuarios.data.dart';
+import 'package:equatable/equatable.dart';
 
-class UsuariosModels {
+class UsuariosModels extends Equatable {
   final int id;
   final String name, email;
   final EnderecoData address;
 
-  UsuariosModels({
+  const UsuariosModels({
     required this.id,
     required this.name,
     required this.email,
@@ -21,4 +22,7 @@ class UsuariosModels {
       address: data.address,
     );
   }
+
+  @override
+  List<Object?> get props => [id, name, email];
 }
