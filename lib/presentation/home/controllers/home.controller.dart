@@ -1,11 +1,12 @@
+import 'package:ekko/domain/core/abstractions/domain/repositories/usuarios_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/presentation/controllers/home/home_controller.interface.dart';
 import 'package:ekko/domain/usuarios/models/usuarios.models.dart';
-import 'package:ekko/domain/usuarios/usuarios.repository.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  final UsuariosRepository _repository;
+class HomeController extends GetxController implements IHomeController {
+  final IUsuariosRepository _repository;
 
-  HomeController({required UsuariosRepository repository})
+  HomeController({required IUsuariosRepository repository})
       : _repository = repository;
 
   final usuarios = <UsuariosModels>[].obs;
@@ -17,6 +18,7 @@ class HomeController extends GetxController {
     loadUsuarios();
   }
 
+  @override
   Future<void> loadUsuarios() async {
     try {
       final response = await _repository.getUsers();
