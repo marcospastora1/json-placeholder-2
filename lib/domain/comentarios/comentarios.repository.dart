@@ -1,12 +1,14 @@
 import 'package:ekko/domain/comentarios/models/comentarios.models.dart';
-import 'package:ekko/infrastructure/dal/services/comments/comments.service.dart';
+import 'package:ekko/domain/core/abstractions/domain/repositories/comentarios_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/comentarios_service.interface.dart';
 
-class ComentariosRepository {
-  final CommentsService _commentsService;
+class ComentariosRepository extends IComentariosRepository {
+  final IComentariosService _commentsService;
 
-  ComentariosRepository({required CommentsService commentsService})
+  ComentariosRepository({required IComentariosService commentsService})
       : _commentsService = commentsService;
 
+  @override
   Future<List<ComentariosModel>> getComments({required int postId}) async {
     try {
       final response = await _commentsService.getComments(postId: postId);

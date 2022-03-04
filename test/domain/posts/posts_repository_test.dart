@@ -18,7 +18,7 @@ void main() {
   });
 
   test(
-    'Should get a list of posts models',
+    'Should return a list of posts models',
     () async {
       const userId = 9;
 

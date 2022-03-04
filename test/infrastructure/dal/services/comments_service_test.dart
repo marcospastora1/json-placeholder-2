@@ -10,7 +10,7 @@ import 'mocks/comentarios_mocks/comentarios.mocks.dart';
 
 void main() {
   late IHttpConnect connect;
-  late ICommentsService commentsService;
+  late IComentariosService commentsService;
 
   setUpAll(() {
     connect = ConnectMock();

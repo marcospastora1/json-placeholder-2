@@ -18,7 +18,7 @@ void main() {
   });
 
   test(
-    'Should get a list of user models',
+    'Should return a list of user models',
     () async {
       when(() => usuariosService.getUsuarios()).thenAnswer(
         (_) async => responseSuccess,

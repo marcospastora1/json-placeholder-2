@@ -4,7 +4,7 @@ import 'package:ekko/domain/core/exceptions/default.exception.dart';
 import 'package:ekko/infrastructure/dal/services/comments/dto/get_comments.response.dart';
 import 'package:ekko/infrastructure/dal/services/data/comentarios.data.dart';
 
-class CommentsService implements ICommentsService {
+class CommentsService implements IComentariosService {
   final IHttpConnect _connect;
 
   CommentsService(IHttpConnect connect) : _connect = connect;

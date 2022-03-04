@@ -1,10 +1,11 @@
 import 'package:ekko/infrastructure/dal/services/data/comentarios.data.dart';
+import 'package:equatable/equatable.dart';
 
-class ComentariosModel {
+class ComentariosModel extends Equatable {
   final int postId, id;
   final String name, email, body;
 
-  ComentariosModel({
+  const ComentariosModel({
     required this.postId,
     required this.id,
     required this.name,
@@ -21,4 +22,7 @@ class ComentariosModel {
       body: data.body,
     );
   }
+
+  @override
+  List<Object?> get props => [postId, id, name, email, body];
 }
