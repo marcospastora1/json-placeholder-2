@@ -1,12 +1,14 @@
 import 'package:ekko/domain/albuns/models/albuns.models.dart';
-import 'package:ekko/infrastructure/dal/services/albuns/albuns.service.dart';
+import 'package:ekko/domain/core/abstractions/domain/repositories/albuns_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/albuns_service.interface.dart';
 
-class AlbunsRepository {
-  final AlbunsService _albunsService;
+class AlbunsRepository extends IAlbunsRepository {
+  final IAlbunsService _albunsService;
 
-  AlbunsRepository({required AlbunsService albunsService})
+  AlbunsRepository({required IAlbunsService albunsService})
       : _albunsService = albunsService;
 
+  @override
   Future<List<AlbunsModel>> getAlbuns({required int userId}) async {
     try {
       final response = await _albunsService.getAlbuns(userId: userId);
