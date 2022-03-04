@@ -2,10 +2,10 @@ import 'package:ekko/domain/core/abstractions/domain/repositories/auth_repositor
 import 'package:ekko/domain/core/abstractions/domain/repositories/usuarios_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/http_connect.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/auth_service.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/posts_service.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/users_service.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/storage.interface.dart';
 import 'package:ekko/domain/core/abstractions/presentation/field.interface.dart';
-import 'package:ekko/presentation/home/controllers/home.controller.dart';
 import 'package:ekko/presentation/shared/loading/loading.interface.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -19,9 +19,9 @@ class ConnectMock extends Mock implements IHttpConnect {}
 
 class StorageMock extends Mock implements IStorage {}
 
-class HomeControllerMock extends Mock implements HomeController {}
-
 class UsuariosServiceMock extends Mock implements IUsuariosService {}
+
+class PostsServiceMock extends Mock implements IPostsService {}
 
 class UsuariosRepositoryMock extends Mock implements IUsuariosRepository {}
 

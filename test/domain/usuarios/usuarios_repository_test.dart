@@ -17,13 +17,18 @@ void main() {
     usuariosRepository = UsuariosRepository(usuariosService: usuariosService);
   });
 
-  test('Should get a list of user models', () async {
-    when(() => usuariosService.getUsuarios()).thenAnswer(
-      (_) async => responseSuccess,
-    );
-    final response = await usuariosRepository.getUsers();
-    final models = [UsuariosModels.fromData(responseSuccess.first)];
+  test(
+    'Should get a list of user models',
+    () async {
+      when(() => usuariosService.getUsuarios()).thenAnswer(
+        (_) async => responseSuccess,
+      );
+      final response = await usuariosRepository.getUsers();
+      //final models = [UsuariosModels.fromData(responseSuccess.first)];
+      final models =
+          responseSuccess.map((e) => UsuariosModels.fromData(e)).toList();
 
-    expect(response, models);
-  });
+      expect(response, models);
+    },
+  );
 }

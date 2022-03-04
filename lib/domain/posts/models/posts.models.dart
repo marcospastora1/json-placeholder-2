@@ -1,10 +1,11 @@
 import 'package:ekko/infrastructure/dal/services/data/posts.data.dart';
+import 'package:equatable/equatable.dart';
 
-class PostsModels {
+class PostsModels extends Equatable {
   final int userId, id;
   final String title, body;
 
-  PostsModels({
+  const PostsModels({
     required this.userId,
     required this.id,
     required this.title,
@@ -19,4 +20,7 @@ class PostsModels {
       body: data.body,
     );
   }
+
+  @override
+  List<Object?> get props => [id];
 }
