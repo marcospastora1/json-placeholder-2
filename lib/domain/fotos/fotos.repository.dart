@@ -1,12 +1,14 @@
+import 'package:ekko/domain/core/abstractions/domain/repositories/fotos_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/infrastructure/services/photos_service.interface.dart';
 import 'package:ekko/domain/fotos/models/fotos.models.dart';
-import 'package:ekko/infrastructure/dal/services/photos/photos.service.dart';
 
-class PhotosRepository {
-  final PhotosService _photosService;
+class PhotosRepository extends IPhotosRepository {
+  final IPhotosService _photosService;
 
-  PhotosRepository({required PhotosService photosService})
+  PhotosRepository({required IPhotosService photosService})
       : _photosService = photosService;
 
+  @override
   Future<List<FotosModel>> getPhotos({required int albumId}) async {
     try {
       final response = await _photosService.getPhotos(albumId: albumId);
