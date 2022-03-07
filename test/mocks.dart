@@ -1,5 +1,4 @@
 import 'package:ekko/domain/core/abstractions/domain/repositories/auth_repository.interface.dart';
-import 'package:ekko/domain/core/abstractions/domain/repositories/usuarios_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/http_connect.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/albuns_service.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/auth_service.interface.dart';
