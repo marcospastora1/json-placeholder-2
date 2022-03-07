@@ -8,6 +8,7 @@ import 'package:ekko/domain/core/abstractions/infrastructure/services/posts_serv
 import 'package:ekko/domain/core/abstractions/infrastructure/services/users_service.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/storage.interface.dart';
 import 'package:ekko/domain/core/abstractions/presentation/field.interface.dart';
+import 'package:ekko/domain/posts/posts.repository.dart';
 import 'package:ekko/domain/usuarios/usuarios.repository.dart';
 import 'package:ekko/presentation/shared/loading/loading.interface.dart';
 import 'package:mocktail/mocktail.dart';
@@ -23,6 +24,8 @@ class ConnectMock extends Mock implements IHttpConnect {}
 class StorageMock extends Mock implements IStorage {}
 
 class UsuariosRepositoryMock extends Mock implements UsuariosRepository {}
+
+class PostsRepositoryMock extends Mock implements PostsRepository {}
 
 class UsuariosServiceMock extends Mock implements IUsuariosService {}
 
