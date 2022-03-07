@@ -1,3 +1,4 @@
+import 'package:ekko/domain/albuns/albuns.repository.dart';
 import 'package:ekko/domain/core/abstractions/domain/repositories/auth_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/http_connect.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/albuns_service.interface.dart';
@@ -26,6 +27,8 @@ class StorageMock extends Mock implements IStorage {}
 class UsuariosRepositoryMock extends Mock implements UsuariosRepository {}
 
 class PostsRepositoryMock extends Mock implements PostsRepository {}
+
+class AlbunsRepositoryMock extends Mock implements AlbunsRepository {}
 
 class UsuariosServiceMock extends Mock implements IUsuariosService {}
 
