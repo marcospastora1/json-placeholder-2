@@ -1,9 +1,12 @@
 import 'package:ekko/domain/core/abstractions/domain/repositories/usuarios_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/presentation/controllers/home/home_controller.interface.dart';
 import 'package:ekko/domain/usuarios/models/usuarios.models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController implements IHomeController {
+class HomeController extends GetxController
+    with EquatableMixin
+    implements IHomeController {
   final IUsuariosRepository _repository;
 
   HomeController({required IUsuariosRepository repository})
@@ -29,4 +32,7 @@ class HomeController extends GetxController implements IHomeController {
       load.value = false;
     }
   }
+
+  @override
+  List<Object?> get props => [_repository];
 }
