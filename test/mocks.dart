@@ -1,4 +1,5 @@
 import 'package:ekko/domain/albuns/albuns.repository.dart';
+import 'package:ekko/domain/comentarios/comentarios.repository.dart';
 import 'package:ekko/domain/core/abstractions/domain/repositories/auth_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/http_connect.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/services/albuns_service.interface.dart';
@@ -9,6 +10,7 @@ import 'package:ekko/domain/core/abstractions/infrastructure/services/posts_serv
 import 'package:ekko/domain/core/abstractions/infrastructure/services/users_service.interface.dart';
 import 'package:ekko/domain/core/abstractions/infrastructure/storage.interface.dart';
 import 'package:ekko/domain/core/abstractions/presentation/field.interface.dart';
+import 'package:ekko/domain/fotos/fotos.repository.dart';
 import 'package:ekko/domain/posts/posts.repository.dart';
 import 'package:ekko/domain/usuarios/usuarios.repository.dart';
 import 'package:ekko/presentation/shared/loading/loading.interface.dart';
@@ -27,6 +29,10 @@ class StorageMock extends Mock implements IStorage {}
 class UsuariosRepositoryMock extends Mock implements UsuariosRepository {}
 
 class PostsRepositoryMock extends Mock implements PostsRepository {}
+
+class FotosRepositoryMock extends Mock implements PhotosRepository {}
+
+class ComentariosRepositoryMock extends Mock implements ComentariosRepository {}
 
 class AlbunsRepositoryMock extends Mock implements AlbunsRepository {}
 
