@@ -1,4 +1,3 @@
-import 'package:ekko/domain/albuns/albuns.repository.dart';
 import 'package:ekko/domain/albuns/models/albuns.models.dart';
 import 'package:ekko/domain/core/abstractions/domain/repositories/albuns_repository.interface.dart';
 import 'package:ekko/domain/core/abstractions/presentation/controllers/albuns/albuns_controller.interface.dart';
