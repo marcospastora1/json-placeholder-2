@@ -1,22 +1,29 @@
-import 'package:ekko/domain/fotos/fotos.repository.dart';
+import 'package:ekko/domain/core/abstractions/domain/repositories/fotos_repository.interface.dart';
+import 'package:ekko/domain/core/abstractions/presentation/controllers/fotos/fotos_controller.interface.dart';
 import 'package:ekko/domain/fotos/models/fotos.models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:get/get.dart';
 
-class FotosController extends GetxController {
-  final PhotosRepository _photosRepository;
+class FotosController extends GetxController
+    with EquatableMixin
+    implements IFotosController {
+  final IPhotosRepository _photosRepository;
 
-  FotosController({required PhotosRepository photosRepository})
+  FotosController({required IPhotosRepository photosRepository})
       : _photosRepository = photosRepository;
   final fotos = <FotosModel>[].obs;
-  final albumId = Get.arguments['id'];
+  late int albumId;
   final error = false.obs;
   final load = true.obs;
 
   @override
-  void onReady() {
+  void onInit() {
+    super.onInit();
+    albumId = Get.arguments['id'];
     loadFotos();
   }
 
+  @override
   Future<void> loadFotos() async {
     try {
       final response = await _photosRepository.getPhotos(albumId: albumId);
@@ -27,4 +34,7 @@ class FotosController extends GetxController {
       load.value = false;
     }
   }
+
+  @override
+  List<Object?> get props => [_photosRepository];
 }
